@@ -10,9 +10,9 @@ enum Formatters {
 }
 
 extension UIViewController {
-    	var presenterVC: UIViewController {
-    		parent?.presenterVC ?? parent ?? self
-    	}
+    var presenterVC: UIViewController {
+        parent?.presenterVC ?? parent ?? self
+    }
     
     func select(friend: Friend) {
         let vc = FriendDetailsViewController()
