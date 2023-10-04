@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct ReceivedTransfersApiItemsServiceAdapter: ItemsService {
+struct SentTransfersApiItemsServiceAdapter: ItemsService {
     let api: TransfersAPI
     let select: (Transfer) -> Void
     
@@ -13,10 +13,10 @@ struct ReceivedTransfersApiItemsServiceAdapter: ItemsService {
             DispatchQueue.mainAsyncIfNeeded {
                 completion(result.map { items in
                     return items
-                        .filter { !$0.isSender }
+                        .filter { $0.isSender }
                         .map { transfer in
                         ItemViewModel(transfer: transfer,
-                                      longDateStyle: false,
+                                      longDateStyle: true,
                                       selection: {
                                         select(transfer)
                         })

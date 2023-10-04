@@ -76,12 +76,36 @@ class MainTabBarController: UITabBarController {
 	private func makeSentTransfersList() -> ListViewController {
 		let vc = ListViewController()
 		vc.fromSentTransfersScreen = true
+        vc.shouldRetry = true
+        vc.maxRetryCount = 1
+        vc.longDateStyle = true
+        
+        vc.navigationItem.title = "Sent"
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Send", style: .done, target: vc, action: #selector(sendMoney))
+        
+        vc.service = SentTransfersApiItemsServiceAdapter(api: TransfersAPI.shared,
+                                                      select: { [weak vc] transfer in
+                                                        vc?.select(transfer: transfer)
+        })
+        
 		return vc
 	}
 	
 	private func makeReceivedTransfersList() -> ListViewController {
 		let vc = ListViewController()
 		vc.fromReceivedTransfersScreen = true
+        vc.shouldRetry = true
+        vc.maxRetryCount = 1
+        vc.longDateStyle = false
+        
+        vc.navigationItem.title = "Received"
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Request", style: .done, target: vc, action: #selector(requestMoney))
+        
+        vc.service = ReceivedTransfersApiItemsServiceAdapter(api: TransfersAPI.shared,
+                                                          select: { [weak vc] transfer in
+                                                            vc?.select(transfer: transfer)
+        })
+        
 		return vc
 	}
 	
@@ -94,10 +118,9 @@ class MainTabBarController: UITabBarController {
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: vc, action: #selector(addCard))
         
         vc.service = CardsApiItemsServiceAdapter(api: CardAPI.shared, 
-                                              select: { [weak vc] card in
-                                                vc?.select(card: card)
+                                               select: { [weak vc] card in
+                                                 vc?.select(card: card)
         })
 		return vc
 	}
-	
 }

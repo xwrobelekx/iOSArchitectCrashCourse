@@ -52,6 +52,7 @@
 		3B774FB72ACD00FD001E55E1 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FB62ACD00FD001E55E1 /* ItemService.swift */; };
 		3B774FB92ACD0149001E55E1 /* TransfersApiItemsServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FB82ACD0149001E55E1 /* TransfersApiItemsServiceAdapter.swift */; };
 		3B774FBB2ACD0177001E55E1 /* CardsApiItemsServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FBA2ACD0177001E55E1 /* CardsApiItemsServiceAdapter.swift */; };
+		3B774FBD2ACD8D39001E55E1 /* SentTransfersApiItemsServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FBC2ACD8D39001E55E1 /* SentTransfersApiItemsServiceAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		3B774FB62ACD00FD001E55E1 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
 		3B774FB82ACD0149001E55E1 /* TransfersApiItemsServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersApiItemsServiceAdapter.swift; sourceTree = "<group>"; };
 		3B774FBA2ACD0177001E55E1 /* CardsApiItemsServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsApiItemsServiceAdapter.swift; sourceTree = "<group>"; };
+		3B774FBC2ACD8D39001E55E1 /* SentTransfersApiItemsServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentTransfersApiItemsServiceAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 				08927BC8268618AC009195BD /* TransfersAPI.swift */,
 				3B774FA82ACC49B5001E55E1 /* ItemViewModel+Transfers.swift */,
 				3B774FB82ACD0149001E55E1 /* TransfersApiItemsServiceAdapter.swift */,
+				3B774FBC2ACD8D39001E55E1 /* SentTransfersApiItemsServiceAdapter.swift */,
 			);
 			name = "Transfers Module";
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				3B774FA92ACC49B5001E55E1 /* ItemViewModel+Transfers.swift in Sources */,
 				3B774FB22ACC6E1F001E55E1 /* DispatchQueue+MainThread.swift in Sources */,
 				08927BD5268618AC009195BD /* FriendsAPI.swift in Sources */,
+				3B774FBD2ACD8D39001E55E1 /* SentTransfersApiItemsServiceAdapter.swift in Sources */,
 				08927BD1268618AC009195BD /* FriendsCache.swift in Sources */,
 				080833E0268F609C00A8099A /* UIViewController+Presentation.swift in Sources */,
 				08927BCD268618AC009195BD /* SegmentNavigationViewController.swift in Sources */,
