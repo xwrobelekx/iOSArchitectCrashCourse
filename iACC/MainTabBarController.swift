@@ -88,6 +88,15 @@ class MainTabBarController: UITabBarController {
 	private func makeCardsList() -> ListViewController {
 		let vc = ListViewController()
 		vc.fromCardsScreen = true
+        vc.shouldRetry = false
+        
+        vc.title = "Cards"
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: vc, action: #selector(addCard))
+        
+        vc.service = CardsApiItemsServiceAdapter(api: CardAPI.shared, 
+                                              select: { [weak vc] card in
+                                                vc?.select(card: card)
+        })
 		return vc
 	}
 	
