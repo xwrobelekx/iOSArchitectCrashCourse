@@ -48,6 +48,12 @@
 		3B774FAB2ACC4AA4001E55E1 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FAA2ACC4AA4001E55E1 /* ItemViewModel.swift */; };
 		3B774FAD2ACC6D97001E55E1 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FAC2ACC6D97001E55E1 /* Formatters.swift */; };
 		3B774FB22ACC6E1F001E55E1 /* DispatchQueue+MainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FB12ACC6E1F001E55E1 /* DispatchQueue+MainThread.swift */; };
+		3B774FB52ACD00B8001E55E1 /* FriendsAPIItemsServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FB42ACD00B8001E55E1 /* FriendsAPIItemsServiceAdapter.swift */; };
+		3B774FB72ACD00FD001E55E1 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FB62ACD00FD001E55E1 /* ItemService.swift */; };
+		3B774FB92ACD0149001E55E1 /* TransfersApiItemsServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FB82ACD0149001E55E1 /* TransfersApiItemsServiceAdapter.swift */; };
+		3B774FBB2ACD0177001E55E1 /* CardsApiItemsServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FBA2ACD0177001E55E1 /* CardsApiItemsServiceAdapter.swift */; };
+		3B774FBD2ACD8D39001E55E1 /* SentTransfersApiItemsServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FBC2ACD8D39001E55E1 /* SentTransfersApiItemsServiceAdapter.swift */; };
+		3B774FBF2ACD8EEA001E55E1 /* FriendsCacheItemsServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B774FBE2ACD8EEA001E55E1 /* FriendsCacheItemsServiceAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +112,12 @@
 		3B774FAA2ACC4AA4001E55E1 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		3B774FAC2ACC6D97001E55E1 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		3B774FB12ACC6E1F001E55E1 /* DispatchQueue+MainThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+MainThread.swift"; sourceTree = "<group>"; };
+		3B774FB42ACD00B8001E55E1 /* FriendsAPIItemsServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAPIItemsServiceAdapter.swift; sourceTree = "<group>"; };
+		3B774FB62ACD00FD001E55E1 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
+		3B774FB82ACD0149001E55E1 /* TransfersApiItemsServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersApiItemsServiceAdapter.swift; sourceTree = "<group>"; };
+		3B774FBA2ACD0177001E55E1 /* CardsApiItemsServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsApiItemsServiceAdapter.swift; sourceTree = "<group>"; };
+		3B774FBC2ACD8D39001E55E1 /* SentTransfersApiItemsServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentTransfersApiItemsServiceAdapter.swift; sourceTree = "<group>"; };
+		3B774FBE2ACD8EEA001E55E1 /* FriendsCacheItemsServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCacheItemsServiceAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,9 +245,10 @@
 				08927BC5268618AC009195BD /* ListViewController.swift */,
 				08927BC3268618AC009195BD /* SegmentNavigationViewController.swift */,
 				08927BCC268618AC009195BD /* NotImplementedViewControllers.swift */,
+				3B774FAA2ACC4AA4001E55E1 /* ItemViewModel.swift */,
+				3B774FB62ACD00FD001E55E1 /* ItemService.swift */,
 				3B774FAE2ACC6DAC001E55E1 /* Helpers */,
 				3B774FAF2ACC6DC3001E55E1 /* Models */,
-				3B774FAA2ACC4AA4001E55E1 /* ItemViewModel.swift */,
 				3B774FB02ACC6DE1001E55E1 /* Extensions */,
 				3B774FA12ACC4908001E55E1 /* Friends Module */,
 				3B774FA72ACC4993001E55E1 /* Transfers Module */,
@@ -274,6 +287,8 @@
 				08927BCB268618AC009195BD /* FriendsAPI.swift */,
 				08927BC7268618AC009195BD /* FriendsCache.swift */,
 				3B774FA22ACC493E001E55E1 /* ItemViewModel+Friends.swift */,
+				3B774FB42ACD00B8001E55E1 /* FriendsAPIItemsServiceAdapter.swift */,
+				3B774FBE2ACD8EEA001E55E1 /* FriendsCacheItemsServiceAdapter.swift */,
 			);
 			name = "Friends Module";
 			sourceTree = "<group>";
@@ -283,6 +298,7 @@
 			children = (
 				08927BC6268618AC009195BD /* CardAPI.swift */,
 				3B774FA52ACC497E001E55E1 /* ItemViewModel+Card.swift */,
+				3B774FBA2ACD0177001E55E1 /* CardsApiItemsServiceAdapter.swift */,
 			);
 			name = "Cards Module";
 			sourceTree = "<group>";
@@ -292,6 +308,8 @@
 			children = (
 				08927BC8268618AC009195BD /* TransfersAPI.swift */,
 				3B774FA82ACC49B5001E55E1 /* ItemViewModel+Transfers.swift */,
+				3B774FB82ACD0149001E55E1 /* TransfersApiItemsServiceAdapter.swift */,
+				3B774FBC2ACD8D39001E55E1 /* SentTransfersApiItemsServiceAdapter.swift */,
 			);
 			name = "Transfers Module";
 			sourceTree = "<group>";
@@ -431,22 +449,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B774FA62ACC497E001E55E1 /* ItemViewModel+Card.swift in Sources */,
+				3B774FBB2ACD0177001E55E1 /* CardsApiItemsServiceAdapter.swift in Sources */,
 				08927B932686183A009195BD /* AppDelegate.swift in Sources */,
 				3B774FAB2ACC4AA4001E55E1 /* ItemViewModel.swift in Sources */,
 				08927BCF268618AC009195BD /* ListViewController.swift in Sources */,
 				08040FFC268B4C1D0062A93B /* MainTabBarController.swift in Sources */,
 				08927BD0268618AC009195BD /* CardAPI.swift in Sources */,
 				08927BD6268618AC009195BD /* NotImplementedViewControllers.swift in Sources */,
+				3B774FB52ACD00B8001E55E1 /* FriendsAPIItemsServiceAdapter.swift in Sources */,
 				3B774FA92ACC49B5001E55E1 /* ItemViewModel+Transfers.swift in Sources */,
 				3B774FB22ACC6E1F001E55E1 /* DispatchQueue+MainThread.swift in Sources */,
 				08927BD5268618AC009195BD /* FriendsAPI.swift in Sources */,
+				3B774FBD2ACD8D39001E55E1 /* SentTransfersApiItemsServiceAdapter.swift in Sources */,
 				08927BD1268618AC009195BD /* FriendsCache.swift in Sources */,
 				080833E0268F609C00A8099A /* UIViewController+Presentation.swift in Sources */,
 				08927BCD268618AC009195BD /* SegmentNavigationViewController.swift in Sources */,
 				3B774FAD2ACC6D97001E55E1 /* Formatters.swift in Sources */,
 				3B774FA32ACC493E001E55E1 /* ItemViewModel+Friends.swift in Sources */,
 				080833E2268F69C200A8099A /* ArticlesAPI.swift in Sources */,
+				3B774FBF2ACD8EEA001E55E1 /* FriendsCacheItemsServiceAdapter.swift in Sources */,
 				08927B952686183A009195BD /* SceneDelegate.swift in Sources */,
+				3B774FB92ACD0149001E55E1 /* TransfersApiItemsServiceAdapter.swift in Sources */,
+				3B774FB72ACD00FD001E55E1 /* ItemService.swift in Sources */,
 				08927BD2268618AC009195BD /* TransfersAPI.swift in Sources */,
 				08927BD4268618AC009195BD /* User.swift in Sources */,
 			);
