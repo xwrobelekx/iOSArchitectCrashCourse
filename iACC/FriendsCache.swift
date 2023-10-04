@@ -25,3 +25,10 @@ class FriendsCache {
 		friends = newFriends
 	}
 }
+
+// Null Object Pattern
+class NullFriendsCache: FriendsCache {
+    override func save(_ newFriends: [Friend]) {
+        // Do Nothing
+    }
+}

@@ -5,10 +5,13 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
+    
+    private var friendsCache: FriendsCache!
 	
-	convenience init() {
-		self.init(nibName: nil, bundle: nil)
-		self.setupViewController()
+	convenience init(friendsCache: FriendsCache) {
+        self.init(nibName: nil, bundle: nil)
+        self.friendsCache = friendsCache
+        self.setupViewController()
 	}
 
 	private func setupViewController() {
@@ -54,6 +57,19 @@ class MainTabBarController: UITabBarController {
 	private func makeFriendsList() -> ListViewController {
 		let vc = ListViewController()
 		vc.fromFriendsScreen = true
+        vc.shouldRetry = true
+        vc.maxRetryCount = 2
+        
+        vc.title = "Friends"
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: vc, action: #selector(addFriend))
+        
+        let isPremium = User.shared?.isPremium == true
+        
+        vc.service = FriendsAPIItemsServiceAdapter(api: FriendsAPI.shared,
+                                                cache: isPremium ? friendsCache : NullFriendsCache(),
+                                                select: { [weak vc] item in
+                                                           vc?.select(friend: item)
+        })
 		return vc
 	}
 	

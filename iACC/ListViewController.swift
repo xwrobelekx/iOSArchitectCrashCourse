@@ -7,6 +7,8 @@ import UIKit
 class ListViewController: UITableViewController {
     var items = [ItemViewModel]()
     
+    var service: ItemsService?
+    
     var retryCount = 0
     var maxRetryCount = 0
     var shouldRetry = false
@@ -66,21 +68,8 @@ class ListViewController: UITableViewController {
     @objc private func refresh() {
         refreshControl?.beginRefreshing()
         if fromFriendsScreen {
-            FriendsAPI.shared.loadFriends { [weak self] result in
-                DispatchQueue.mainAsyncIfNeeded {
-                    self?.handleAPIResult(result.map { items in
-                        if User.shared?.isPremium == true {
-                            (UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate).cache.save(items)
-                        }
-                        
-                        return items.map { item in
-                            ItemViewModel(friend: item) {
-                                self?.select(friend: item)
-                            }
-                        }
-                    })
-                }
-            }
+            service?.loadItems(completion: handleAPIResult)
+            
         } else if fromCardsScreen {
             CardAPI.shared.loadCards { [weak self] result in
                 DispatchQueue.mainAsyncIfNeeded {
