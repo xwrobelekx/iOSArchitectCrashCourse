@@ -3,6 +3,8 @@
  - How do deliver high-quality apps on time following good principles.
  - Master Scalable iOS App Architecture Patterns.
 
+---
+
 ## Exploring and applying SOLID principles:
 - Single Responsibility Principle (SRP) - A class should have only one reason to change. This means a class should have only one responsibility or job. By ensuring that a class addresses only one concern, you can avoid entangling multiple functionalities together, which can lead to better separation of concerns and easier maintenance.
 - Open/Closed Principle (OCP) - Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. This means that the behavior of a module can be extended without modifying its source code. One common way to achieve this is by using interfaces or abstract classes.
@@ -10,6 +12,7 @@
 - Interface Segregation principle (ISP) - Clients should not be forced to depend on interfaces they do not use. This means that instead of having one large, all-encompassing interface, it's often better to break it down into smaller, more specific interfaces so that a client class only needs to know about the methods that are of interest to it.
 - Dependency Inversion Principle (DIP) - High-level modules should not depend on low-level modules. Both should depend on abstractions. Also, abstractions should not depend on details. Details should depend on abstractions. This principle often is realized through the use of interfaces or abstract classes, ensuring that higher-level components depend on an abstraction and not on the concrete implementation of lower-level components.
 
+### Exploring those paterns and principles as well:
 
 - Implicit vs Expilicit Dependencies.
 - Global dependencies (Singletons) vs Depenedency Injection.
@@ -18,10 +21,11 @@
 - Composite pattern with primary strategy and fallback strategy
 
 
-## Spotting principal violations:
+### Spotting principal violations:
 - "Open Closed Principle" - We should be able to add or change behavior without changing the exisiting code, especially if we want to reuse it in other context. (if else statments is a good inidcation of this violaiton).
 - "Liskov Substitution Principle" - If you have an interface that accepts a specific input or implements a specific interfece, and you call a method, and it crashes it violates this priniciple. Usually when you see fatalErrors or that it accepts "Any" type is a good indication of this prinicple vioilation.
 
+---
 
 # iOS Architect Crash Course • September 25th to October 1st 2023 • EssentialDeveloper.com
 
