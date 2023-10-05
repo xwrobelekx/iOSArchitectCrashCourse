@@ -57,3 +57,54 @@ Watch the lectures and implement what you learned into this project to practice 
 5) The code should be carefully organized and easy to read (e.g., indentation must be consistent).
 
 Happy coding!
+
+---
+
+# Diagram evloution
+# How dependencias were emilimnated:
+
+## Starting Point: 
+Here ListViewController had many dependeceis and responsibilities. 
+- It depended on global API dependecies directly.
+- It depended on globabl Cache.
+- It depended on accesing SceneDelegate directly.
+- It was accesing globabl user directly.
+- It had a lot of procedural logic to figure out what screen it should render.
+- It handled navigation to all the screens.
+  
+<img width="576" alt="Begining State Diagram" src="https://github.com/xwrobelekx/iOSArchitectCrashCourse/assets/16248193/9660e568-6814-4f2d-9c85-8c58518e581f">
+
+
+## Part One completed:
+After completing part one of the course:
+- Used ViewController `show()` method to decouple the need to display a view controller from the process of actually presenting that view controller onscreen.
+- Introduced ItemViewModel which decupled the cell from handling `Friend`, `Card`, and `Transfer` busines logic directly.
+
+<img width="576" alt="PartOne State Diagram" src="https://github.com/xwrobelekx/iOSArchitectCrashCourse/assets/16248193/b1fd0250-7564-4ef5-b71e-99a651de08d3">
+
+## Introducing Adapters:
+Without adapters we're not able to achive true separation of concers, flexibility, and scalibility we need. 
+
+In the diagrams below you can see the issue faced without adapters, and how adapters solve the problem giving us the felxibility and scalibility we need:
+
+<img width="504" alt="Violations" src="https://github.com/xwrobelekx/iOSArchitectCrashCourse/assets/16248193/0f9c6c89-3222-4644-8ed9-0e103413e204">
+<img width="432" alt="Issue of not using adapter" src="https://github.com/xwrobelekx/iOSArchitectCrashCourse/assets/16248193/983a85e1-37fa-4de1-a4fa-c97ad53a42b4">
+
+With Adapter:
+
+<img width="576" alt="Introducing Adapters" src="https://github.com/xwrobelekx/iOSArchitectCrashCourse/assets/16248193/65e61e67-ecab-41b9-8360-4ede264ceda2">
+
+
+## Final Product:
+The end result is trully clean design. 
+ListViewController only depends on one service `ItemsService` and a `Cell` that depends on `ItemViewModel` everything else is decoupled from the ViewController, resulting in:
+- Flexibility
+- Scalibility
+- Clean and light design.
+
+We can now swap out services, add, or remove Api's without affecting the `ListViewController`.
+`ListViewController` doesn't know anything about the services used, it doesn't even know what screen is being rendered, it just uses the data provided and presents it to the user.
+
+
+<img width="725" alt="Final Diagram of ListViewController" src="https://github.com/xwrobelekx/iOSArchitectCrashCourse/assets/16248193/b297b4b7-e649-4227-b633-1ab247e5721b">
+
